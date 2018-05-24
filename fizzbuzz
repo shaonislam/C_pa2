@@ -1,0 +1,38 @@
+# Shaon Islam
+# cs2750 PA #2
+# 10/01/2017
+
+#!/bin/bash
+
+# Printing function
+printnums()
+{	
+	n=$1
+	for (( i=1; i<n+1; i++ )){
+		echo $i
+	}	
+}
+
+
+
+
+#Main
+
+echo 'Enter number: '
+read number
+number="${number:-20}"
+
+if (( (( number % 3 )) == 0 ))
+ then
+  if (( ((number % 5 )) == 0 ))
+  then
+    echo FizzBuzz
+  else
+   echo Fizz
+  fi
+elif (( (( number % 5 )) == 0 ))
+ then
+  echo Buzz
+else
+ printnums $number
+fi

@@ -1,0 +1,64 @@
+# Shaon Islam
+# cs2750 PA #2
+# 10/01/2017
+
+#!bin/bash
+
+#ADD 
+a()
+{
+sum=$((num1 + num2))
+echo $num1 + $num2 = $sum
+}
+
+#SUBTRACT
+s()
+{
+diff=$((num1 - num2))
+echo $num1 -  $num2 = $diff
+}
+
+#MULTIPLY 
+m()
+{
+product=$((num1*num2))
+echo $num1 \* $num2 = $product
+}
+
+#DIVIDE 
+d()
+{
+quotient=$((num1/num2))
+echo $num1 / $num2 = $quotient
+}
+
+
+#Main
+
+echo Enter one letter, A S M D, and two numbers: 
+read function num1 num2
+
+#Checking if num1 num2 are empty
+if [[ -z $num2 ]] || [[ -z $num1 ]]
+then
+   echo input invalid, check your numbers
+   exit
+fi
+
+
+#Checking for which function to call
+if [[ $function == 'a' ]] || [[ $function == 'A' ]]
+then
+   a num1 num2
+elif [[ $function == 's' ]] || [[ $function == 'S' ]]
+then
+   s num1 num2
+elif [[ $function == 'm' ]] || [[ $function == 'M' ]]
+then
+   m num1 num2
+elif [[ $function == 'd' ]] || [[ $function == 'D' ]]
+then
+   d num1 num2
+else
+   echo Incorrect function input
+fi

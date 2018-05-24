@@ -1,0 +1,16 @@
+# Shaon Islam
+# cs2750 PA #2
+# 10/02/2017
+
+#!bin/bash
+
+
+# List files, sorts them according to the size column,
+# and only print the file name column
+find $1 -ls | sort -k7 -r -n | awk '{print $11}' 
+
+
+# Finds files with size zero and prompts user to remove them
+find $1 -size 0 -exec rm -i {} \;
+
+
